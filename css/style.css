@@ -40,7 +40,6 @@ h1 {
   height: 100%;
 }
 
-/* MODIFIED: Added true vertical centering to the outer wrapper */
 #tm-wrap {
   display: flex;
   justify-content: center;
@@ -54,9 +53,6 @@ p {
   letter-spacing: 1px;
 }
 
-/* MODIFIED: Changed justify-content to 'center' so elements group in the 
-   middle vertically on large screens. Added padding adjustments to keep 
-   the structure balanced. */
 .tm-main-content {
   display: flex;
   flex-direction: column;
@@ -71,15 +67,13 @@ p {
   overflow: auto;
 }
 
-/* MODIFIED: Wraps the container row to ensure content blocks center 
-   equally relative to one another on wide aspect ratios */
 .tm-site-header-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: auto;   /* Works with margin-bottom: auto to squeeze content */
-  margin-bottom: auto;/* perfectly into the vertical center of the screen */
+  margin-top: auto;   
+  margin-bottom: auto;
 }
 
 .tm-site-header-col {
@@ -346,9 +340,6 @@ p {
   border-color: transparent;
 }
 
-/* MODIFIED: Fixed layout spacing logic. Margin-top auto is removed here 
-   and handled safely within the main column framework to keep it pinned 
-   at the screen bottom edge without squeezing the central content. */
 footer {
   width: 100%;
   text-align: center;
@@ -414,6 +405,13 @@ p:last-child {
     max-width: 450px;
   }
   
+  /* MODIFIED: Implemented a top margin inside the mobile block 
+     to shift the text layout and navigation roundels down by 40px */
+  .tm-site-header-container {
+    margin-top: 40px !important; 
+    margin-bottom: 0 !important;
+  }
+
   .content {
     margin: 0 auto;
     max-width: 370px; 
