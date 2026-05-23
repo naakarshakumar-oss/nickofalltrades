@@ -53,12 +53,14 @@ p {
   letter-spacing: 1px;
 }
 
+/* MODIFIED: Reverted justify-content to 'space-between' to push the footer 
+   dynamically to the viewport base while keeping layout objects structured. */
 .tm-main-content {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: space-between; 
   align-items: center;
-  padding: 80px 15px 120px 15px; 
+  padding: 80px 15px 0 15px; /* Cleaned bottom padding to allow footer margins to handle spacing */
   position: absolute;
   left: 0;
   right: 0;
@@ -340,11 +342,14 @@ p {
   border-color: transparent;
 }
 
+/* MODIFIED: Forced exact bottom positioning across all form factors 
+   with an explicit 60px viewport offset margin */
 footer {
   width: 100%;
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  margin-top: auto !important;
+  margin-bottom: 60px !important; 
+  padding-top: 20px;
   z-index: 10;
 }
 
@@ -405,8 +410,6 @@ p:last-child {
     max-width: 450px;
   }
   
-  /* MODIFIED: Implemented a top margin inside the mobile block 
-     to shift the text layout and navigation roundels down by 40px */
   .tm-site-header-container {
     margin-top: 80px !important; 
     margin-bottom: 0 !important;
@@ -444,9 +447,11 @@ p:last-child {
     font-size: 15px;
   }
 
+  /* MODIFIED: Kept strict 60px spacing rules active for small hand-held viewports */
   footer {
     position: relative;
     bottom: 0;
+    margin-bottom: 60px !important;
   }
 }
 
