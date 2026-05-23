@@ -408,7 +408,7 @@ p:last-child {
   /* MODIFIED: Implemented a top margin inside the mobile block 
      to shift the text layout and navigation roundels down by 40px */
   .tm-site-header-container {
-    margin-top: 40px !important; 
+    margin-top: 80px !important; 
     margin-bottom: 0 !important;
   }
 
