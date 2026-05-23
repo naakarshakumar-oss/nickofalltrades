@@ -145,11 +145,15 @@ p {
   font-weight: 300;
 }
 .content {
+  width: 100%;
   max-width: 370px;
+  margin: 0 auto; /* Centers the container within its column */
 }
+
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Centers the icons inside the grid */
 }
 .grid__item {
   margin: 10px;
