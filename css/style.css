@@ -2,7 +2,6 @@
 
 NicK of All Trades
 
-
 */
 
 body {
@@ -41,8 +40,10 @@ h1 {
   height: 100%;
 }
 
+/* MODIFIED: Added true vertical centering to the outer wrapper */
 #tm-wrap {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100%;
   min-height: 100vh;
@@ -53,10 +54,15 @@ p {
   letter-spacing: 1px;
 }
 
+/* MODIFIED: Changed justify-content to 'center' so elements group in the 
+   middle vertically on large screens. Added padding adjustments to keep 
+   the structure balanced. */
 .tm-main-content {
   display: flex;
+  flex-direction: column;
+  justify-content: center; 
   align-items: center;
-  padding: 50px 15px;
+  padding: 80px 15px 120px 15px; 
   position: absolute;
   left: 0;
   right: 0;
@@ -65,14 +71,26 @@ p {
   overflow: auto;
 }
 
+/* MODIFIED: Wraps the container row to ensure content blocks center 
+   equally relative to one another on wide aspect ratios */
+.tm-site-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;   /* Works with margin-bottom: auto to squeeze content */
+  margin-bottom: auto;/* perfectly into the vertical center of the screen */
+}
+
 .tm-site-header-col {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .tm-site-header {
   margin: 10px;
-  text-align: right;
+  text-align: center; 
   width: 100%;
 }
 
@@ -135,7 +153,7 @@ p {
 }
 
 .tm-nav-icon.needs-space {
-  margin-bottom: 30px !important;  /* Extra space only for these */
+  margin-bottom: 30px !important;  
   display: block;
 }
 
@@ -144,20 +162,25 @@ p {
 .tm-page-title {
   font-weight: 300;
 }
+
 .content {
   width: 100%;
-  max-width: 370px;
-  margin: 0 auto; /* Centers the container within its column */
+  max-width: 100%; 
+  margin: 0 auto;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers the icons inside the grid */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
 .grid__item {
-  margin: 10px;
+  margin: 15px; 
 }
+
 .product {
   position: relative;
   cursor: pointer;
@@ -323,13 +346,19 @@ p {
   border-color: transparent;
 }
 
-/* Footer */
+/* MODIFIED: Fixed layout spacing logic. Margin-top auto is removed here 
+   and handled safely within the main column framework to keep it pinned 
+   at the screen bottom edge without squeezing the central content. */
 footer {
-  position: absolute;
-  bottom: 30px;
+  width: 100%;
   text-align: center;
-  left: 0;
-  right: 0;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  z-index: 10;
+}
+
+.tm-current-year {
+  /* Namespace container styling */
 }
 
 .tm-text-highlight {
@@ -369,7 +398,7 @@ p:last-child {
 
 @media (min-width: 900px) {
   .container {
-    max-width: 900px;
+    max-width: 1140px; 
   }
 }
 
@@ -384,17 +413,19 @@ p:last-child {
   .container {
     max-width: 450px;
   }
+  
   .content {
-    margin-left: auto;
-    margin-right: 0;
+    margin: 0 auto;
+    max-width: 370px; 
   }
+  .grid {
+    justify-content: center;
+  }
+  
   .tm-nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .grid {
-    justify-content: flex-end;
+    justify-content: center; 
   }
   .tm-col-email {
     padding-left: 15px;
