@@ -1,0 +1,53 @@
+/* Container to center the blockquote on your webpage */
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    font-family: 'Arial', sans-serif; /* Replace with your project's font */
+  }
+  
+  /* Base style for the quote block */
+  .custom-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* Styling the sentences */
+  .custom-quote p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 5px 0;
+    line-height: 1.4;
+  }
+  
+  /* Styling for the blue, bold bottom sentence */
+  .custom-quote .highlight-text {
+    color: #ffc107; /* Navy blue color from your image */
+    font-weight: 800;
+  }
+  
+  /* Creating the top quotation mark */
+  .custom-quote::before {
+    content: "“";
+    font-size: 5rem;
+    line-height: 1;
+    color: #ffc107;
+    font-family: Georgia, serif; /* Using a serif font makes quotation marks look classic */
+    margin-bottom: -10px;
+  }
+  
+  /* Creating the bottom quotation mark */
+  .custom-quote::after {
+    content: "”";
+    font-size: 5rem;
+    line-height: 1;
+    color: #ffc107;
+    font-family: Georgia, serif;
+    margin-top: 10px;
+  }
